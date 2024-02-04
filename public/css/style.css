@@ -1,0 +1,83 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+#no-button {
+    margin: 0 10px;
+    color: white;
+    background-color: red;
+    height: 40px !important;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+
+    p {
+        margin: 0;
+        object-fit: contain;
+    }
+}
+
+#yes-button {
+    margin: 0 10px;
+    color: white;
+    border: none;
+    background-color: green;
+    cursor: pointer;
+    height: 40px;
+
+    p {
+        margin: 0;
+        object-fit: contain;
+    }
+}
+
+/* Make responsive for mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.message {
+    display: none;
+}
+
+.banner-gif {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+
+    img {
+        width: auto;
+        height: 250px;
+    }
+}
+
+/* Path: /js/script.js */
