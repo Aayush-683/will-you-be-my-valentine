@@ -1,20 +1,39 @@
-const answers = [
-    "Are you sure?",
-    "Are you really sure??",
-    "Are you really realy sure???",
-    "Think again?",
-    "Don't believe in second chances?",
-    "Why are you being so cold?",
-    "Maybe we can talk about it?",
-    "I am not going to ask again!",
-    "Ok now this is hurting my feelings!",
-    "You are now just being mean!",
-    "Why are you doing this to me?",
-    "Please give me a chance!",
-    "I am begging you to stop!",
-    "Ok, Lets just start over.."
-]
+const answers = {
+    english: [
+        "Are you sure?",
+        "Are you really sure??",
+        "Are you really realy sure???",
+        "Think again?",
+        "Don't believe in second chances?",
+        "Why are you being so cold?",
+        "Maybe we can talk about it?",
+        "I am not going to ask again!",
+        "Ok now this is hurting my feelings!",
+        "You are now just being mean!",
+        "Why are you doing this to me?",
+        "Please give me a chance!",
+        "I am begging you to stop!",
+        "Ok, Let's just start over.."
+    ],
+    french: [
+        "Tu es sûr ?",
+        "Tu es vraiment sûr ??",
+        "Tu es vraiment vraiment sûr ???",
+        "Réfléchis encore?",
+        "Tu ne crois pas aux deuxièmes chances ?",
+        "Pourquoi tu es si froid?",
+        "Peut-être, on peut en parler ?",
+        "Je ne vais pas demander encore une fois!",
+        "D'accord, maintenant ca me fait mal!",
+        "Tu es juste méchant!",
+        "Pourquoi tu me fais ça?",
+        "Donnez-moi une chance plz!",
+        "Je te supplie d'arrêter!",
+        "D'accord, recommençons.."
+    ]
+};
 
+let language = "english"; // Default language is English
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
 let i = 0;
@@ -25,7 +44,7 @@ no_button.addEventListener('click', () => {
     // Change banner source
     let banner = document.getElementById('banner');
     if (clicks === 0) {
-        banner.src = "images/no.gif";
+        banner.src = "./public/images/no.gif";
         refreshBanner();
     }
     clicks++;
@@ -35,13 +54,13 @@ no_button.addEventListener('click', () => {
     size += sizes[random]
     yes_button.style.height = `${size}px`;
     yes_button.style.width = `${size}px`;
-    let total = answers.length;
+    let total = answers[language].length;
     // change button text
     if (i < total - 1) {
-        no_button.innerHTML = answers[i];
+        no_button.innerHTML = answers[language][i];
         i++;
     } else if (i === total - 1) {
-        alert(answers[i]);
+        alert(answers[language][i]);
         i = 0;
         no_button.innerHTML = "No";
         yes_button.style.height = "50px";
@@ -53,7 +72,7 @@ no_button.addEventListener('click', () => {
 yes_button.addEventListener('click', () => {
     // change banner gif path
     let banner = document.getElementById('banner');
-    banner.src = "images/yes.gif";
+    banner.src = "./public/images/yes.gif";
     refreshBanner();
     // hide buttons div
     let buttons = document.getElementsByClassName('buttons')[0];
@@ -69,4 +88,30 @@ function refreshBanner() {
     let src = banner.src;
     banner.src = '';
     banner.src = src;
+}
+
+function changeLanguage() {
+    const selectElement = document.getElementById("language-select");
+    const selectedLanguage = selectElement.value;
+    language = selectedLanguage;
+
+    // Update question heading
+    const questionHeading = document.getElementById("question-heading");
+    if (language === "french") {
+        questionHeading.textContent = "Tu veux être mon valentin?";
+    } else {
+        questionHeading.textContent = "Will you be my valentine?";
+    }
+
+    // Reset button text to first in the new language
+    no_button.innerHTML = answers[language][0];
+    i = 1; // Start from the second answer in the new language
+
+    // Update success message
+    const successMessage = document.getElementById("success-message");
+    if (language === "french") {
+        successMessage.textContent = "Yepppie, à bientôt :3";
+    } else {
+        successMessage.textContent = "Yepppie, see you sooonnn :3";
+    }
 }
