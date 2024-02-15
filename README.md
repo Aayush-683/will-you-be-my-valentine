@@ -1,6 +1,2 @@
 Just a meme website. 
-- Live @ https://aayushnet.tech/valentine
-
-# Your own insta
-Add your username as an id paramter at the end of the url
-- Example: https://aayushnet.tech/valentine?id=@aayushh.hhhh
+- View Live: [Click Here](https://aayush-683.github.io/will-you-be-my-valentine/)
