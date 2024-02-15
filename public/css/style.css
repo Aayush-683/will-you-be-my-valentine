@@ -80,4 +80,23 @@ body {
     }
 }
 
+.language-selector {
+  font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.language-selector label {
+  margin-right: 10px;
+}
+
+.language-selector select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 0; /* Remove rounded borders */
+  font-size: 16px;
+}
+
 /* Path: /js/script.js */
