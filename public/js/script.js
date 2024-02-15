@@ -1,5 +1,6 @@
-const answers = {
+const answers_no = {
     english: [
+        "No",
         "Are you sure?",
         "Are you really sure??",
         "Are you really realy sure???",
@@ -16,6 +17,7 @@ const answers = {
         "Ok, Let's just start over.."
     ],
     french: [
+        "Non",
         "Tu es sûr ?",
         "Tu es vraiment sûr ??",
         "Tu es vraiment vraiment sûr ???",
@@ -33,10 +35,15 @@ const answers = {
     ]
 };
 
+answers_yes = {
+    "english": "Yes",
+    "french": "Oui"
+}
+
 let language = "english"; // Default language is English
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
-let i = 0;
+let i = 1;
 let size = 50;
 let clicks = 0;
 
@@ -54,15 +61,16 @@ no_button.addEventListener('click', () => {
     size += sizes[random]
     yes_button.style.height = `${size}px`;
     yes_button.style.width = `${size}px`;
-    let total = answers[language].length;
+    let total = answers_no[language].length;
     // change button text
     if (i < total - 1) {
-        no_button.innerHTML = answers[language][i];
+        no_button.innerHTML = answers_no[language][i];
         i++;
     } else if (i === total - 1) {
-        alert(answers[language][i]);
-        i = 0;
-        no_button.innerHTML = "No";
+        alert(answers_no[language][i]);
+        i = 1;
+        no_button.innerHTML = answers_no[language][0];
+        yes_button.innerHTML = answers_yes[language];
         yes_button.style.height = "50px";
         yes_button.style.width = "50px";
         size = 50;
@@ -103,9 +111,15 @@ function changeLanguage() {
         questionHeading.textContent = "Will you be my valentine?";
     }
 
+    // Reset yes button text
+    yes_button.innerHTML = answers_yes[language];
+
     // Reset button text to first in the new language
-    no_button.innerHTML = answers[language][0];
-    i = 1; // Start from the second answer in the new language
+    if (clicks === 0) {
+        no_button.innerHTML = answers_no[language][0];
+    } else {
+        no_button.innerHTML = answers_no[language][clicks];
+    }
 
     // Update success message
     const successMessage = document.getElementById("success-message");
