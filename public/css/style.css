@@ -81,25 +81,24 @@ body {
 }
 
 .language-selector {
-  margin-top: 30px;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* transform: translateX(-50%); */
-  width: 100%;
+    bottom: 10px;
+    position: fixed;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .language-selector label {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .language-selector select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  /* border-radius: 0; */ /* Remove rounded borders */
-  font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
 .creator {
@@ -117,4 +116,15 @@ body {
     color: #555;
 }
 
-/* Path: /js/script.js */
+/* CSS For Mobile */
+@media (max-width: 768px) {
+    .language-selector {
+        margin-top: 30px;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
