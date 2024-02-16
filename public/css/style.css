@@ -81,8 +81,7 @@ body {
 }
 
 .language-selector {
-  position: fixed;
-  bottom: 20px;
+  margin-top: 30px;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: row;
