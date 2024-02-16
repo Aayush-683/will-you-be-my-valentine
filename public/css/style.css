@@ -81,11 +81,15 @@ body {
 }
 
 .language-selector {
-  font-family: Arial, sans-serif;
   position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* transform: translateX(-50%); */
+  width: 100%;
 }
 
 .language-selector label {
@@ -95,7 +99,7 @@ body {
 .language-selector select {
   padding: 5px;
   border: 1px solid #ccc;
-  border-radius: 0; /* Remove rounded borders */
+  /* border-radius: 0; */ /* Remove rounded borders */
   font-size: 16px;
 }
 
