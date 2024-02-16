@@ -119,6 +119,7 @@ body {
 /* CSS For Mobile */
 @media (max-width: 768px) {
     .language-selector {
+        position: unset;
         margin-top: 30px;
         font-family: Arial, sans-serif;
         display: flex;
