@@ -32,12 +32,30 @@ const answers_no = {
         "Donnez-moi une chance plz!",
         "Je te supplie d'arrêter!",
         "D'accord, recommençons.."
-    ]
+    ],
+    Thailand: [
+        "ไม่อ่ะ",
+        "แน่ใจจริงๆหรอคะ?",
+        "แน่ใจจริงๆ จริงๆนะคะ?",
+        "อย่าบอกนะว่านี่แน่ใจสุดๆแล้วจริงๆ ?",
+        "ลองคิดดูอีกทีหน่อยสิคะ..",
+        "ขอโอกาศที่สองทีค่ะ..",
+        "อย่าเย็นชาสิคะ กระซิกๆ",
+        "ขอร้องนะคะ",
+        "น้าาาๆๆๆๆๆ",
+        "เราจะร้องไห้เอานะ กระซิกๆ",
+        "จะเอางี้ๆจริงหรอคะ",
+        "ฮือออออ",
+        "ขอโอกาศครั้งที่สองที่ค่ะ!",
+        "ขอร้องละค่าาา",
+        "โอเคค่ะ.. งั้นเริ่มใหม่ !"
+    ],
 };
 
 answers_yes = {
     "english": "Yes",
-    "french": "Oui"
+    "french": "Oui",
+    "Thailand": "เย่ คืนดีกันแล้วน้า"
 }
 
 let language = "english"; // Default language is English
@@ -111,6 +129,12 @@ function changeLanguage() {
         questionHeading.textContent = "Will you be my valentine?";
     }
 
+    if (language === "Thailand") {
+        questionHeading.textContent = "คืนดีกับเราได้อ่ะป่าว?";
+    } else {
+        questionHeading.textContent = "Will you be my valentine?";
+    }
+
     // Reset yes button text
     yes_button.innerHTML = answers_yes[language];
 
@@ -125,6 +149,12 @@ function changeLanguage() {
     const successMessage = document.getElementById("success-message");
     if (language === "french") {
         successMessage.textContent = "Yepppie, à bientôt :3";
+    } else {
+        successMessage.textContent = "Yepppie, see you sooonnn :3";
+    }
+
+    if (language === "Thailand") {
+        successMessage.textContent = "ฮูเร่ คืนดีกันแล้วน้า :3";
     } else {
         successMessage.textContent = "Yepppie, see you sooonnn :3";
     }
