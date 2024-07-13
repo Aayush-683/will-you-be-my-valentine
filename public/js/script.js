@@ -32,12 +32,30 @@ const answers_no = {
         "Donnez-moi une chance plz!",
         "Je te supplie d'arrêter!",
         "D'accord, recommençons.."
+    ],
+    thai: [
+        "ไม่อ่ะ",
+        "แน่ใจจริงๆหรอคะ?",
+        "แน่ใจจริงๆ จริงๆนะคะ?",
+        "อย่าบอกนะว่านี่แน่ใจสุดๆแล้วจริงๆ ?",
+        "ลองคิดดูอีกทีหน่อยสิคะ..",
+        "ขอโอกาศที่สองทีค่ะ..",
+        "อย่าเย็นชาสิคะ กระซิกๆ",
+        "ขอร้องนะคะ",
+        "น้าาาๆๆๆๆๆ",
+        "เราจะร้องไห้เอานะ กระซิกๆ",
+        "จะเอางี้ๆจริงหรอคะ",
+        "ฮือออออ",
+        "ขอโอกาศครั้งที่สองที่ค่ะ!",
+        "ขอร้องละค่าาา",
+        "โอเคค่ะ.. งั้นเริ่มใหม่ !"
     ]
 };
 
 answers_yes = {
     "english": "Yes",
-    "french": "Oui"
+    "french": "Oui",
+    "Thailand": "เย่ คืนดีกันแล้วน้า"
 }
 
 let language = "english"; // Default language is English
@@ -107,6 +125,8 @@ function changeLanguage() {
     const questionHeading = document.getElementById("question-heading");
     if (language === "french") {
         questionHeading.textContent = "Tu veux être mon valentin?";
+    } else if (language === "thai") {
+        questionHeading.textContent = "คืนดีกับเราได้อ่ะป่าว?";
     } else {
         questionHeading.textContent = "Will you be my valentine?";
     }
@@ -125,6 +145,8 @@ function changeLanguage() {
     const successMessage = document.getElementById("success-message");
     if (language === "french") {
         successMessage.textContent = "Yepppie, à bientôt :3";
+    } else if (language === "thai") {
+        successMessage.textContent = "ฮูเร่ คืนดีกันแล้วน้า :3";
     } else {
         successMessage.textContent = "Yepppie, see you sooonnn :3";
     }
